@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1 | CSS Color Challenge</title>
+    <link rel="shortcut icon" href="https://schessmessed.vercel.app/images/w-horse.png" type="image/x-icon">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap');
+
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #d9534f;
+            border-radius: 10px;
+            border: 3px solid #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c9302c;
+        }
+
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #d9534f #f1f1f1;
+        }
+
+        *::-webkit-scrollbar-track {
+            background-color: #f1f1f1;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background-color: #d9534f;
+            border-radius: 10px;
+            border: 3px solid #f1f1f1;
+        }
+
+        *::-webkit-scrollbar-thumb:hover {
+            background-color: #c9302c;
+        }
+
+        body {
+            font-family: "Be Vietnam Pro", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #222;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .colors {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .examples {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .examples h2 {
+            color: #35424a;
+            margin-bottom: 10px;
+        }
+
+        .color-box {
+            width: 100%;
+            height: 100px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            color: #fff;
+        }
+
+        h1 span {
+            color: #717171;
+        }
+
+        footer {
+            background-color: #222;
+            color: #666;
+            text-align: center;
+            padding: 10px 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .btn-cont {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 22px;
+        }
+
+        .btn-cont form a {
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            color: yellow;
+            font-size: 16px;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: 0.5s;
+            letter-spacing: 4px;
+        }
+
+        .btn-cont a:hover {
+            background: yellow;
+            color: black;
+            font-weight: bolder;
+            border-radius: 5px;
+            box-shadow: 0 0 5px yellow, 0 0 25px yellow, 0 0 50px yellow, 0 0 100px yellow;
+        }
+
+        .btn-cont a span {
+            position: absolute;
+            display: block;
+        }
+
+        .btn-cont a span:nth-child(1) {
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, yellow);
+            animation: btn-anim1 1s linear infinite;
+        }
+
+        @keyframes btn-anim1 {
+            0% {
+                left: -100%;
+            }
+
+            50%,
+            100% {
+                left: 100%;
+            }
+        }
+
+        .btn-cont a span:nth-child(2) {
+            top: -100%;
+            right: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, transparent, yellow);
+            animation: btn-anim2 1s linear infinite;
+            animation-delay: 0.25s;
+        }
+
+        @keyframes btn-anim2 {
+            0% {
+                top: -100%;
+            }
+
+            50%,
+            100% {
+                top: 100%;
+            }
+        }
+
+        .btn-cont a span:nth-child(3) {
+            bottom: 0;
+            right: 100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(270deg, transparent, yellow);
+            animation: btn-anim3 1s linear infinite;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes btn-anim3 {
+            0% {
+                right: -100%;
+            }
+
+            50%,
+            100% {
+                right: 100%;
+            }
+        }
+
+        .btn-cont a span:nth-child(4) {
+            bottom: -100%;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(360deg, transparent, yellow);
+            animation: btn-anim4 1s linear infinite;
+            animation-delay: 0.75s;
+        }
+
+        @keyframes btn-anim4 {
+            0% {
+                bottom: -100%;
+            }
+
+            50%,
+            100% {
+                bottom: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h1>CSS Task 1 <span>Color Challenge.</span></h1>
+    </header>
+    <section class="colors">
+        <div class="examples named-color">
+            <h2>Named Colors</h2>
+            <div class="color-box" style="background-color: tomato;">tomato</div>
+            <p>Example of a named color: <code>tomato</code></p>
+        </div>
+        <div class="examples hex-color">
+            <h2>Hexadecimal Colors</h2>
+            <div class="color-box" style="background-color: #4682b4;">#4682b4</div>
+            <p>Example of a hexadecimal color: <code>#4682b4</code></p>
+        </div>
+        <div class="examples rgb-color">
+            <h2>RGB Colors</h2>
+            <div class="color-box" style="background-color: rgb(50, 205, 50);">rgb(50, 205, 50)</div>
+            <p>Example of an RGB color: <code>rgb(50, 205, 50)</code></p>
+        </div>
+        <div class="examples rgba-color">
+            <h2>RGBA Colors</h2>
+            <div class="color-box" style="background-color: rgba(255, 69, 0, 0.5);">rgba(255, 69, 0, 0.5)</div>
+            <p>RGBA color: <code>rgba(255, 69, 0, 0.5)</code></p>
+        </div>
+        <div class="examples hsl-color">
+            <h2>HSL Colors</h2>
+            <div class="color-box" style="background-color: hsl(45, 85%, 55%);">hsl(45, 85%, 55%)</div>
+            <p>Example of an HSL color: <code>hsl(45, 85%, 55%)</code></p>
+        </div>
+        <div class="examples hsla-color">
+            <h2>HSLA Colors</h2>
+            <div class="color-box" style="background-color: hsla(120, 100%, 25%, 0.5);">hsla(120, 100%, 25%, 0.5)</div>
+            <p>HSLA color: <code>hsla(120, 100%, 25%, 0.5)</code></p>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>&copy; 2024 CSS Color Challenge. All rights reserved.</p>
+
+        <div class="btn-cont">
+            <div class="prev">
+                <form action="">
+                    <a href="">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span> &lt; home
+                    </a>
+                </form>
+            </div>
+
+            <div class="next">
+                <form action="">
+                    <a href="task2.html" target="_blank">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>Next &gt;
+                    </a>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

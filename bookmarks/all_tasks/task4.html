@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4 | CSS Sticky Navigation bar</title>
+    <link rel="shortcut icon" href="https://schessmessed.vercel.app/images/w-horse.png" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap');
+
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #d9534f;
+            border-radius: 10px;
+            border: 3px solid #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c9302c;
+        }
+
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #d9534f #f1f1f1;
+        }
+
+        *::-webkit-scrollbar-track {
+            background-color: #f1f1f1;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background-color: #d9534f;
+            border-radius: 10px;
+            border: 3px solid #f1f1f1;
+        }
+
+        *::-webkit-scrollbar-thumb:hover {
+            background-color: #c9302c;
+        }
+
+
+        body,
+        h1,
+        h2,
+        p,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1 span {
+            color: rgb(113 113 113);
+            font-weight: bolder;
+        }
+
+        body {
+            font-family: "Be Vietnam Pro", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        .header {
+            background-color: #222;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            background-color: #e8491d;
+            padding: 15px 0;
+        }
+
+        .navbar ul {
+            list-style: none;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        .navbar ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+            border-radius: 30px;
+        }
+
+        .navbar ul li a:hover {
+            background-color: #ffffff;
+            color: #e8491d;
+            border-radius: 30px;
+        }
+
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .home {
+            background-color: #f4f4f4;
+        }
+
+        .about {
+            background-color: #e2e2e2;
+        }
+
+        .services {
+            background-color: #cccccc;
+        }
+
+        .contact {
+            background-color: #bfbfbf;
+        }
+
+        .section .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .footer {
+            background-color: #35424a;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+
+
+        .btn-cont {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 22px;
+        }
+
+        .btn-cont form a {
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            color: yellow;
+            font-size: 16px;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: 0.5s;
+            /* margin-top: 40px; */
+            letter-spacing: 4px;
+        }
+
+        .btn-cont a:hover {
+            background: yellow;
+            color: black;
+            font-weight: bolder;
+            border-radius: 5px;
+            box-shadow: 0 0 5px yellow, 0 0 25px yellow, 0 0 50px yellow, 0 0 100px yellow;
+        }
+
+        .btn-cont a span {
+            position: absolute;
+            display: block;
+        }
+
+        .btn-cont a span:nth-child(1) {
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, yellow);
+            animation: btn-anim1 1s linear infinite;
+        }
+
+        @keyframes btn-anim1 {
+            0% {
+                left: -100%;
+            }
+
+            50%,
+            100% {
+                left: 100%;
+            }
+        }
+
+        .btn-cont a span:nth-child(2) {
+            top: -100%;
+            right: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, transparent, yellow);
+            animation: btn-anim2 1s linear infinite;
+            animation-delay: 0.25s;
+        }
+
+        @keyframes btn-anim2 {
+            0% {
+                top: -100%;
+            }
+
+            50%,
+            100% {
+                top: 100%;
+            }
+        }
+
+        .btn-cont a span:nth-child(3) {
+            bottom: 0;
+            right: 100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(270deg, transparent, yellow);
+            animation: btn-anim3 1s linear infinite;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes btn-anim3 {
+            0% {
+                right: -100%;
+            }
+
+            50%,
+            100% {
+                right: 100%;
+            }
+        }
+
+        .btn-cont a span:nth-child(4) {
+            bottom: -100%;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(360deg, transparent, yellow);
+            animation: btn-anim4 1s linear infinite;
+            animation-delay: 0.75s;
+        }
+
+        @keyframes btn-anim4 {
+            0% {
+                bottom: -100%;
+            }
+
+            50%,
+            100% {
+                bottom: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h1>CSS Task <span>4</span></h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home" class="section home">
+        <div class="content">
+            <h2>Welcome to Our Website</h2>
+            <p>We offer the best services to help you succeed.</p>
+        </div>
+    </section>
+    <section id="about" class="section about">
+        <div class="content">
+            <h2>About Us</h2>
+            <p>We are a team of professionals dedicated to delivering top-notch solutions for your business.</p>
+        </div>
+    </section>
+    <section id="services" class="section services">
+        <div class="content">
+            <h2>Our Services</h2>
+            <p>We offer a wide range of services to meet your needs, including web development, graphic design, and
+                digital marketing.</p>
+        </div>
+    </section>
+    <section id="contact" class="section contact">
+        <div class="content">
+            <h2>Contact Us</h2>
+            <p>Feel free to reach out to us for any inquiries or to get a quote.</p>
+        </div>
+    </section>
+
+<!-- Footer styled! -->
+    <footer class="footer">
+        <p>&copy; 2024 Mastering CSS selectors. All rights reserved.</p>
+
+        <div class="btn-cont">
+            <div class="prev">
+                <form action="">
+                    <a href="task3.html" target="_blank">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span> &lt; previous
+                    </a>
+                </form>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

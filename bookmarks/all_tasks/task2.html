@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2 | CSS Challenge: Mastering Selectors</title>
+    <link rel="shortcut icon" href="https://schessmessed.vercel.app/images/w-horse.png" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap');
+
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #d9534f;
+            border-radius: 10px;
+            border: 3px solid #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c9302c;
+        }
+
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #d9534f #f1f1f1;
+        }
+
+        *::-webkit-scrollbar-track {
+            background-color: #f1f1f1;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background-color: #d9534f;
+            border-radius: 10px;
+            border: 3px solid #f1f1f1;
+        }
+
+        *::-webkit-scrollbar-thumb:hover {
+            background-color: #c9302c;
+        }
+
+        body {
+            font-family: "Be Vietnam Pro", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #222;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .selectors {
+            padding: 20px;
+        }
+
+        .selector {
+            background-color: #ffffff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .example1 {
+            border-left: 10px solid #ff6347;
+        }
+
+        .example2 {
+            border-left: 10px solid #4682b4;
+        }
+
+        .example3 {
+            border-left: 10px solid #32cd32;
+        }
+
+        .example4 {
+            border-left: 10px solid #ff4500;
+        }
+
+        .example5 {
+            border-left: 10px solid #daa520;
+        }
+
+        h1 span {
+            color: rgb(113 113 113);
+        }
+
+        h2 {
+            color: #222;
+        }
+
+        p {
+            color: #666;
+        }
+
+        footer {
+            background-color: #222;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+
+
+
+
+        .btn-cont {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 22px;
+        }
+
+        .btn-cont form a {
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            color: yellow;
+            font-size: 16px;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: 0.5s;
+            /* margin-top: 40px; */
+            letter-spacing: 4px;
+        }
+
+        .btn-cont a:hover {
+            background: yellow;
+            color: black;
+            font-weight: bolder;
+            border-radius: 5px;
+            box-shadow: 0 0 5px yellow, 0 0 25px yellow, 0 0 50px yellow, 0 0 100px yellow;
+        }
+
+        .btn-cont a span {
+            position: absolute;
+            display: block;
+        }
+
+        .btn-cont a span:nth-child(1) {
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, yellow);
+            animation: btn-anim1 1s linear infinite;
+        }
+
+        @keyframes btn-anim1 {
+            0% {
+                left: -100%;
+            }
+
+            50%,
+            100% {
+                left: 100%;
+            }
+        }
+
+        .btn-cont a span:nth-child(2) {
+            top: -100%;
+            right: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, transparent, yellow);
+            animation: btn-anim2 1s linear infinite;
+            animation-delay: 0.25s;
+        }
+
+        @keyframes btn-anim2 {
+            0% {
+                top: -100%;
+            }
+
+            50%,
+            100% {
+                top: 100%;
+            }
+        }
+
+        .btn-cont a span:nth-child(3) {
+            bottom: 0;
+            right: 100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(270deg, transparent, yellow);
+            animation: btn-anim3 1s linear infinite;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes btn-anim3 {
+            0% {
+                right: -100%;
+            }
+
+            50%,
+            100% {
+                right: 100%;
+            }
+        }
+
+        .btn-cont a span:nth-child(4) {
+            bottom: -100%;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(360deg, transparent, yellow);
+            animation: btn-anim4 1s linear infinite;
+            animation-delay: 0.75s;
+        }
+
+        @keyframes btn-anim4 {
+            0% {
+                bottom: -100%;
+            }
+
+            50%,
+            100% {
+                bottom: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h1>CSS Task 2 <span>Challenge: Mastering Selectors</span></h1>
+    </header>
+    <section class="selectors">
+        <article class="selector example1">
+            <h2>Type Selector</h2>
+            <p>This is a type selector. It targets all elements of a given type, like all <code>&lt;p&gt;</code> tags.
+            </p>
+        </article>
+        <article class="selector example2">
+            <h2>Class Selector</h2>
+            <p>This is a class selector. It targets elements with a specific class, like <code>.example</code>.</p>
+        </article>
+        <article class="selector example3">
+            <h2>ID Selector</h2>
+            <p>This is an ID selector. It targets elements with a specific ID, like <code>#example</code>.</p>
+        </article>
+        <article class="selector example4">
+            <h2>Attribute Selector</h2>
+            <p>This is an attribute selector. It targets elements with a specific attribute, like
+                <code>[type="text"]</code>.
+            </p>
+        </article>
+        <article class="selector example5">
+            <h2>Child Selector</h2>
+            <p>This is a child selector. It targets elements that are direct children of a specified element, like
+                <code>ul > li</code>.
+            </p>
+        </article>
+    </section>
+    <footer class="footer">
+        <p>&copy; 2024 Mastering CSS selectors. All rights reserved.</p>
+
+        <div class="btn-cont">
+            <div class="prev">
+                <form action="">
+                    <a href="index.html">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span> &lt; previous
+                    </a>
+                </form>
+            </div>
+
+            <div class="next">
+                <form action="">
+                    <a href="task3.html" target="_blank">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>Next &gt;
+                    </a>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
