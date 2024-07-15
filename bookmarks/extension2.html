@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 6 | The Five Tasks</title>
+    <link rel="shortcut icon" href="https://schessmessed.vercel.app/images/w-horse.png" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: deeppink;
+            /* Pink color for thumb */
+            border-radius: 10px;
+            border: 3px solid #f9f9f9;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: deeppink;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            background-color: #faf8f0;
+            padding: 20px;
+            line-height: 1.1;
+        }
+
+        h1,
+        h2 {
+            display: flex;
+            justify-content: center;
+        }
+
+        h2 {
+            color: rgb(108 108 108);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: deeppink;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: deeppink;
+            color: white;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 47px;
+            border-radius: 30px;
+            margin: 0;
+        }
+
+        .back-button:hover {
+            background-color: deeppink;
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .hoverable {
+            display: inline-block;
+            /* Ensures the div doesn't break layout */
+        }
+
+        .hoverable a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .hoverable:hover {
+            text-decoration: underline;
+        }
+
+        img {
+            top: -10px;
+            width: 108px;
+            position: relative;
+            margin-left: -9px;
+        }
+
+        h3 {
+            font-size: 31px;
+            line-height: 0.1;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="https://smitbookmarks.vercel.app/img/smit.png" alt="SMIT img" />
+    <h1><u>Assignment Five</u></h1>
+    <h2>Add CSS to All previous assignments</h2>
+    <h3>previews:</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Tasks</th>
+                <th>Task Previews</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> 1.</td>
+                <td class="hoverable"><a href="all_tasks/task1.html" target="_blank">Color Challenge</a><span
+                        style="color: #717171; font-weight: 600;">
+                        CSS</span></td>
+            </tr>
+            <tr>
+                <td> 2.</td>
+                <td class="hoverable"><a href="all_tasks/task2.html" target="_blank">Mastering selectors</a><span
+                        style="color: #717171; font-weight: 600;">
+                        CSS</span></td>
+            </tr>
+            <tr>
+                <td> 3.</td>
+                <td class="hoverable"><a href="all_tasks/task3.html" target="_blank">Product card</a><span
+                        style="color: #717171; font-weight: 600;">
+                        CSS</span></td>
+            </tr>
+            <tr>
+                <td> 4.</td>
+                <td class="hoverable"><a href="all_tasks/task4.html" target="_blank">Navigation bar</a><span
+                        style="color: #717171; font-weight: 600;">
+                        CSS</span></td>
+            </tr>
+        </tbody>
+    </table><br>
+    <!-- <h3>source codes:</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Assignments</th>
+                <th>Source</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Color Challenge <span style="color: #717171; font-weight: 600;">
+                        CSS</span></td>
+                <td class="hoverable"><a href="https://github.com/ARHAM5432/6th_assignment-SMIT/blob/main/all_tasks/task1.html"
+                        target="_blank">Github repository</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Mastering selectors <span style="color: #717171; font-weight: 600;">
+                        CSS</span></td>
+                <td class="hoverable"><a href="https://github.com/ARHAM5432/6th_assignment-SMIT/blob/main/all_tasks/task2.html"
+                        target="_blank">Github repository</a></td>
+            </tr>
+            <tr>
+                <td>Product card <span style="color: #717171; font-weight: 600;">
+                        CSS</span></td>
+                <td class="hoverable"><a href="https://github.com/ARHAM5432/6th_assignment-SMIT/blob/main/all_tasks/task3.html"
+                        target="_blank">Github repository</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Navigation bar <span style="color: #717171; font-weight: 600;">
+                        CSS</span></td>
+                <td class="hoverable"><a href="https://github.com/ARHAM5432/6th_assignment-SMIT/blob/main/all_tasks/task4.html"
+                        target="_blank">Github repository</a></td>
+            </tr>
+        </tbody>
+    </table> -->
+    <a href="https://smitbookmarks.vercel.app" class="back-button">Back</a>
+</body>
+
+</html>
